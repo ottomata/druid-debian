@@ -1,0 +1,14 @@
+[Unit]
+Description=Druid Historical Node
+
+[Service]
+User=druid
+Group=druid
+
+# Load any environment overrides from this file.
+EnvironmentFile=-/etc/default/druid-historical
+
+ExecStart=/usr/bin/druid historical
+
+[Install]
+WantedBy=multi-user.target

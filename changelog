@@ -1,0 +1,5 @@
+druid (0.9.0-1~dev1) jessie-wikimedia; urgency=low
+
+  * Initial debianization
+
+ -- Andrew Otto (WMF) <otto@wikimedia.org>  Thu, 5 May 2016 22:05:05 +0000

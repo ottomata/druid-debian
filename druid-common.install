@@ -1,0 +1,2 @@
+debian/bin/druid usr/bin
+debian/etc/druid/common.runtime.properties etc/druid

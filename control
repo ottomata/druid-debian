@@ -1,0 +1,19 @@
+Source: druid
+Section: misc
+Priority: optional
+Maintainer: Andrew Otto <otto@wikimedia.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: http://druid,io
+
+Package: druid-common
+Architecture: all
+Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}
+Description: Druid
+ This package includes common Druid .jar files.
+
+Package: druid-historical
+Architecture: all
+Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}, druid-common
+Description: Druid
+ This package installs init scripts for the druid historical node

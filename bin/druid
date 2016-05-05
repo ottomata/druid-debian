@@ -1,0 +1,58 @@
+#!/bin/sh
+
+SCRIPT_NAME=$(basename "$0")
+DRUID_CONFIG=${DRUID_CONFIG:-/etc/druid}
+DRUID_LOG_DIR=${LOG_DIR:-/var/log/druid}
+DRUID_CLASSPATH=${DRUID_CLASSPATH:-/usr/share/druid/*:/usr/share/druid/hadoop-dependencies/*}
+
+# Default JVM opts for all druid processes
+DRUID_JVM_OPTS=${DRUID_JVM_OPTS:-"-Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.io.tmpdir=/tmp -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"}
+
+
+USAGE="Usage:
+
+$SCRIPT_NAME <node>
+"
+
+usage() { echo "${USAGE}"; }
+
+
+# Builds CLASSPATH and execs java with appropriate arguments
+druid_run() {
+    entrypoint=${1}
+    node="${2}"
+
+    # If these were not yet set (by user or defaults file),
+    # then go ahead and set them.
+    if [ -z "${DRUID_JMX_OPTS}" ]; then
+        DRUID_JMX_OPTS="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false  -Dcom.sun.management.jmxremote.ssl=false "
+    fi
+    if [ -n "${JMX_PORT}" ]; then
+        DRUID_JMX_OPTS="$DRUID_JMX_OPTS -Dcom.sun.management.jmxremote.port=$JMX_PORT "
+    fi
+
+    if [ -z "$JAVA_HOME" ]; then
+        JAVA="java"
+    else
+        JAVA="$JAVA_HOME/bin/java"
+    fi
+
+    # Memory options
+    if [ -z "DRUID_HEAP_OPTS" ]; then
+        DRUID_HEAP_OPTS="-Xmx1g"
+    fi
+
+    DRUID_LOG4J_OPTS="-Ddruid.log.dir=${DRUID_LOG_DIR} ${DRUID_LOG4J_OPTS}"
+
+    # Include common.properties and $node.properties classpath
+    CLASSPATH="${DRUID_CONFIG}:${DRUID_CONFIG}/${node}:${DRUID_CLASSPATH}"
+    echo exec $JAVA $DRUID_LOG4J_OPTS $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH io.druid.cli.Main $@
+    exec      $JAVA $DRUID_LOG4J_OPTS $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH io.druid.cli.Main $@
+}
+
+# if no commands, print usage.
+if [ $# -lt 1 ]; then
+    usage && exit 0
+fi
+
+druid_run $@

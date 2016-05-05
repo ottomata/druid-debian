@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+export VERSION=0.9.0
+
+%:
+	dh $@
+
+override_dh_install:
+	dh_install
+	# make install installs files into debian/tmp.
+	# These files are part of the kafka-common package.
+	cp -rv $(CURDIR)/lib/* $(CURDIR)/debian/druid-common/usr/share/druid/
+	cp -rv $(CURDIR)/hadoop-dependencies/* $(CURDIR)/debian/druid-common/usr/share/druid/hadoop-dependencies/
+
+override_dh_installinit:
+	# Don't start services after installation
+	dh_installinit --no-start

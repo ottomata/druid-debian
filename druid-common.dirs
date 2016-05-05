@@ -1,0 +1,7 @@
+etc/druid
+usr/share/druid
+usr/share/druid/hadoop-dependencies
+var/lib/druid
+var/lib/druid/deep-storage
+var/lib/druid/indexing-logs
+var/log/druid
