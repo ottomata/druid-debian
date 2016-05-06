@@ -1,2 +1,3 @@
-debian/etc/druid/middleManager/runtime.properties etc/druid/middleManager
+debian/etc/druid/middleManager/env.sh etc/druid/middleManager
 debian/etc/druid/middleManager/log4j2.xml etc/druid/middleManager
+debian/etc/druid/middleManager/runtime.properties etc/druid/middleManager

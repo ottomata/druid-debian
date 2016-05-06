@@ -6,7 +6,7 @@ User=druid
 Group=druid
 
 # Load any environment overrides from this file.
-EnvironmentFile=-/etc/default/druid-middlemanager
+EnvironmentFile=-/etc/druid/middleManager/env.sh
 
 ExecStart=/usr/bin/druid server middleManager
 

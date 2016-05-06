@@ -1,2 +1,3 @@
-debian/etc/druid/broker/runtime.properties etc/druid/broker
+debian/etc/druid/broker/env.sh etc/druid/broker
 debian/etc/druid/broker/log4j2.xml etc/druid/broker
+debian/etc/druid/broker/runtime.properties etc/druid/broker

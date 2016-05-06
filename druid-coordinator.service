@@ -6,7 +6,7 @@ User=druid
 Group=druid
 
 # Load any environment overrides from this file.
-EnvironmentFile=-/etc/default/druid-coodinator
+EnvironmentFile=-/etc/druid/coordinator/env.sh
 
 ExecStart=/usr/bin/druid server coordinator
 

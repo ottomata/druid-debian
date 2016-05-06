@@ -1,6 +1,8 @@
 etc/druid
 usr/share/druid
+usr/share/druid/extensions
 usr/share/druid/hadoop-dependencies
+usr/share/druid/lib
 var/lib/druid
 var/lib/druid/deep-storage
 var/lib/druid/indexing-logs

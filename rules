@@ -7,10 +7,13 @@ export VERSION=0.9.0
 
 override_dh_install:
 	dh_install
-	# make install installs files into debian/tmp.
-	# These files are part of the kafka-common package.
-	cp -rv $(CURDIR)/lib/* $(CURDIR)/debian/druid-common/usr/share/druid/
+
+	# Copy all druid dependencies into usr/share/druid
+	cp -rv $(CURDIR)/lib/* $(CURDIR)/debian/druid-common/usr/share/druid/lib/
 	cp -rv $(CURDIR)/hadoop-dependencies/* $(CURDIR)/debian/druid-common/usr/share/druid/hadoop-dependencies/
+	cp -rv $(CURDIR)/extensions/* $(CURDIR)/debian/druid-common/usr/share/druid/extensions/
+	# Also copy extensions provided by this debian packaging
+	cp -rv $(CURDIR)/debian/extensions/* $(CURDIR)/debian/druid-common/usr/share/druid/extensions/
 
 override_dh_installinit:
 	# Don't start services after installation

@@ -6,7 +6,7 @@ User=druid
 Group=druid
 
 # Load any environment overrides from this file.
-EnvironmentFile=-/etc/default/druid-overlord
+EnvironmentFile=-/etc/druid/overlord/env.sh
 
 ExecStart=/usr/bin/druid server overlord
 
