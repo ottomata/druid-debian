@@ -2,7 +2,6 @@
 
 SCRIPT_NAME=$(basename "$0")
 DRUID_CONFIG=${DRUID_CONFIG:-/etc/druid}
-DRUID_LOG_DIR=${LOG_DIR:-/var/log/druid}
 DRUID_CLASSPATH=${DRUID_CLASSPATH:-/usr/share/druid/*:/usr/share/druid/hadoop-dependencies/*}
 
 # Default JVM opts for all druid processes
@@ -42,12 +41,10 @@ druid_run() {
         DRUID_HEAP_OPTS="-Xmx1g"
     fi
 
-    DRUID_LOG4J_OPTS="-Ddruid.log.dir=${DRUID_LOG_DIR} ${DRUID_LOG4J_OPTS}"
-
     # Include common.properties and $node.properties classpath
     CLASSPATH="${DRUID_CONFIG}:${DRUID_CONFIG}/${node}:${DRUID_CLASSPATH}"
-    echo exec $JAVA $DRUID_LOG4J_OPTS $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH io.druid.cli.Main $@
-    exec      $JAVA $DRUID_LOG4J_OPTS $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH io.druid.cli.Main $@
+    echo $JAVA $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH io.druid.cli.Main $@
+    exec $JAVA $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH io.druid.cli.Main $@
 }
 
 # if no commands, print usage.

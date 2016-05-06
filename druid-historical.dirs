@@ -1,1 +1,2 @@
+etc/druid/historical
 var/lib/druid/segment-cache

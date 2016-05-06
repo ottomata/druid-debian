@@ -1,14 +1,14 @@
 [Unit]
-Description=Druid Historical Node
+Description=Druid Coordinator Node
 
 [Service]
 User=druid
 Group=druid
 
 # Load any environment overrides from this file.
-EnvironmentFile=-/etc/default/druid-historical
+EnvironmentFile=-/etc/default/druid-coodinator
 
-ExecStart=/usr/bin/druid server historical
+ExecStart=/usr/bin/druid server coordinator
 
 [Install]
 WantedBy=multi-user.target

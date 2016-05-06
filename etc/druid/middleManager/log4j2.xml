@@ -3,8 +3,8 @@
 <Configuration status="warn">
     <Appenders>
         <RollingFile name="RollingFile"
-            fileName="/var/log/druid/historical.log"
-            filePattern="/var/log/druid/historical.%i.log">
+            fileName="/var/log/druid/middleManager.log"
+            filePattern="/var/log/druid/middleManager.%i.log">
             <PatternLayout>
                 <Pattern>%d{ISO8601} %p %c: %m%n</Pattern>
             </PatternLayout>

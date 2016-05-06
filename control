@@ -9,11 +9,35 @@ Homepage: http://druid,io
 Package: druid-common
 Architecture: all
 Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}
-Description: Druid
+Description: Druid Common
  This package includes common Druid .jar files.
+
+Package: druid-broker
+Architecture: all
+Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}, druid-common
+Description: Druid Broker Node
+ This package installs init scripts for the druid broker node.
 
 Package: druid-historical
 Architecture: all
 Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}, druid-common
-Description: Druid
- This package installs init scripts for the druid historical node
+Description: Druid Historical Node
+ This package installs init scripts for the druid historical node.
+
+Package: druid-coordinator
+Architecture: all
+Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}, druid-common
+Description: Druid Coordinator Node
+ This package installs init scripts for the druid coordinator node.
+
+Package: druid-middlemanager
+Architecture: all
+Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}, druid-common
+Description: Druid MiddleManager Node
+ This package installs init scripts for the druid middleManager node.
+
+Package: druid-overlord
+Architecture: all
+Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}, druid-common
+Description: Druid Overlord Node
+ This package installs init scripts for the druid overlord node.

@@ -1,0 +1,14 @@
+[Unit]
+Description=Druid MiddleManager Node
+
+[Service]
+User=druid
+Group=druid
+
+# Load any environment overrides from this file.
+EnvironmentFile=-/etc/default/druid-middlemanager
+
+ExecStart=/usr/bin/druid server middleManager
+
+[Install]
+WantedBy=multi-user.target
