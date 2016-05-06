@@ -6,7 +6,7 @@ HADOOP_VERSION=${HADOOP_VERSION:-2.3.0}
 DRUID_CLASSPATH=${DRUID_CLASSPATH:-/usr/share/druid/lib/*}
 
 # Default JVM opts for all druid processes
-DRUID_JVM_OPTS=${DRUID_JVM_OPTS:-"-Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.io.tmpdir=/tmp -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"}
+DRUID_JVM_OPTS=${DRUID_JVM_OPTS:-"-Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.io.tmpdir=/var/lib/druid/tmp -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"}
 
 
 USAGE="Usage:

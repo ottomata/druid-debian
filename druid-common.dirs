@@ -6,4 +6,5 @@ usr/share/druid/lib
 var/lib/druid
 var/lib/druid/deep-storage
 var/lib/druid/indexing-logs
+var/lib/druid/tmp
 var/log/druid

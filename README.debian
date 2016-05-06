@@ -1,0 +1,23 @@
+Druid for Debian
+----------------
+
+This package is created from the release tarballs provided from Druid.io.
+It does not build Druid from source.
+
+To Build
+--------
+1. Download a Druid tarball from http://druid.io/
+   E.g. http://static.druid.io/artifacts/releases/druid-0.9.0-bin.tar.gz
+
+2. Extract this tarball
+   tar -xvzf druid-0.9.0-bin.tar.gz
+
+3. Rename the tar.gz to an orig.tar.gz expected by dpkg-buildpackage
+   mv druid-0.9.0-bin.tar.gz druid_0.9.0.orig.tar.gz
+
+4. Clone this debian repository into the extracted Druid release
+   cd druid-0.9.0
+   git clone ____ ./debian
+
+5. Edit debian/changlelog, and then build
+   dpkg-buildpackage
