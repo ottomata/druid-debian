@@ -6,18 +6,19 @@ It does not build Druid from source.
 
 To Build
 --------
-1. Download a Druid tarball from http://druid.io/
-   E.g. http://static.druid.io/artifacts/releases/druid-0.9.0-bin.tar.gz
+1. Download a Druid tarball.
+   This configuration supported version is 0.15.1
+   E.g. http://apache.cp.if.ua/incubator/druid/0.15.1-incubating/apache-druid-0.15.1-incubating-bin.tar.gz
 
 2. Extract this tarball
-   tar -xvzf druid-0.9.0-bin.tar.gz
+   $ tar -xzf apache-druid-0.15.1-incubating-bin.tar.gz
 
 3. Rename the tar.gz to an orig.tar.gz expected by dpkg-buildpackage
-   mv druid-0.9.0-bin.tar.gz druid_0.9.0.orig.tar.gz
+   $ mv apache-druid-0.15.1-incubating-bin.tar.gz druid_0.15.1.orig.tar.gz
 
 4. Clone this debian repository into the extracted Druid release
-   cd druid-0.9.0
-   git clone ____ ./debian
+   $ cd apache-druid-0.15.1-incubating
+   $ git clone GIT_REPO_HERE debian
 
 5. Edit debian/changlelog, and then build
    dpkg-buildpackage

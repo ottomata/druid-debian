@@ -1,4 +1,0 @@
-This extension was installed as part of WMF druid debian packaging.
-The jars here were downloaded from
-http://static.druid.io/artifacts/releases/mysql-metadata-storage-0.9.0.tar.gz
-and installed as part of the druid-common package.

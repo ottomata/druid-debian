@@ -44,8 +44,8 @@ druid_run() {
 
     # Include common.properties and $node.properties classpath
     CLASSPATH="${DRUID_CONFIG}:${DRUID_CONFIG}/${node}:${DRUID_CLASSPATH}"
-    echo $JAVA $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH io.druid.cli.Main $@
-    exec $JAVA $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH io.druid.cli.Main $@
+    echo $JAVA $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH org.apache.druid.cli.Main $@
+    exec $JAVA $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH org.apache.druid.cli.Main $@
 }
 
 # if no commands, print usage.

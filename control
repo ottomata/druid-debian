@@ -8,7 +8,7 @@ Homepage: http://druid.io
 
 Package: druid-common
 Architecture: all
-Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}
+Depends: java8-runtime, adduser, ${misc:Depends}
 Description: Druid Common
  This package includes common Druid .jars including extensions and
  Hadoop Depdencies shipped with the Druid release.  It also includes the
@@ -16,30 +16,30 @@ Description: Druid Common
 
 Package: druid-broker
 Architecture: all
-Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}, druid-common
+Depends: java8-runtime, adduser, ${misc:Depends}, druid-common
 Description: Druid Broker Node
  This package installs init scripts for the Druid Broker node.
 
 Package: druid-coordinator
 Architecture: all
-Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}, druid-common
+Depends: java8-runtime, adduser, ${misc:Depends}, druid-common
 Description: Druid Coordinator Node
  This package installs init scripts for the Druid Coordinator node.
 
 Package: druid-historical
 Architecture: all
-Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}, druid-common
+Depends: java8-runtime, adduser, ${misc:Depends}, druid-common
 Description: Druid Historical Node
  This package installs init scripts for the Druid Historical node.
 
 Package: druid-middlemanager
 Architecture: all
-Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}, druid-common
+Depends: java8-runtime, adduser, ${misc:Depends}, druid-common
 Description: Druid MiddleManager Node
  This package installs init scripts for the Druid MiddleManager node.
 
 Package: druid-overlord
 Architecture: all
-Depends: openjdk-7-jre | java7-runtime, adduser, ${misc:Depends}, druid-common
+Depends: java8-runtime, adduser, ${misc:Depends}, druid-common
 Description: Druid Overlord Node
  This package installs init scripts for the Druid Overlord node.

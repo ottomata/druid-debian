@@ -1,3 +1,9 @@
+druid (0.15.1-1) stable; urgency=low
+
+  * Update Druid to 0.15.1 version.
+
+ -- Viacheslav Chimishuk <vchimishuk@yandex.ru>  Thu, 15 Aug 2019 17:34:00 +0300
+
 druid (0.9.0-1~dev1) jessie-wikimedia; urgency=low
 
   * Initial debianization
